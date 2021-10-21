@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.woodapiary.meteo</groupId>
+    <groupId>ru.m4j.meteo</groupId>
     <artifactId>meteo-bom</artifactId>
     <version>21.3.4-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -21,29 +21,29 @@
     <inceptionYear>2021</inceptionYear>
 
     <organization>
-        <name>woodapiary.com</name>
-        <url>https://woodapiary.com</url>
+        <name>m4j.ru</name>
+        <url>https://m4j.ru</url>
     </organization>
 
     <licenses>
         <license>
-            <name>Copyright (c) 2002-2021 meteo@woodapiary.com</name>
-            <url>https://woodapiary.com</url>
+            <name>Copyright (c) 2002-2021 meteo@m4j.ru</name>
+            <url>https://m4j.ru</url>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <name>woodapiary</name>
-            <email>meteo@woodapiary.com</email>
-            <organization>woodapiary.com</organization>
-            <organizationUrl>https://woodapiary.com</organizationUrl>
+            <name>m4j</name>
+            <email>meteo@m4j.ru</email>
+            <organization>m4j.ru</organization>
+            <organizationUrl>https://m4j.ru</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/woodapiary/meteo-bom</connection>
-        <url>https://github.com/woodapiary/meteo-bom</url>
+        <connection>scm:git:https://github.com/m4j-git/meteo-bom</connection>
+        <url>https://github.com/m4j-git/meteo-bom</url>
     </scm>
 
     <properties>
