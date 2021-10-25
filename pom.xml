@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.5</version>
+        <version>2.5.6</version>
         <relativePath/>
     </parent>
 
@@ -66,7 +66,7 @@
         <hibernate.validator.version>7.0.1.Final</hibernate.validator.version>
         <modelmapper.version>2.4.2</modelmapper.version>
         <springboot.admin.starter.version>2.4.1</springboot.admin.starter.version>
-        <spring-boot-starter-actuator.version>2.5.2</spring-boot-starter-actuator.version>
+        <spring-boot-starter-actuator.version>2.5.6</spring-boot-starter-actuator.version>
 
         <org.apache.httpcomponents.client5.version>5.0.3</org.apache.httpcomponents.client5.version>
         <javax.mail.version>1.4.7</javax.mail.version>
