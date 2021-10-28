@@ -1,30 +1,31 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ru.m4j.meteo</groupId>
 	<artifactId>meteo-bom</artifactId>
 	<version>21.4.5-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>meteo-bom</name>
+	<packaging>pom</packaging>
+	<name>meteo-bom</name>
 
-    <description>Spring Boot App for OpenWeatherMap</description>
-    <url>https://m4j.ru/meteo-ow</url>
-    <inceptionYear>2021</inceptionYear>
+	<description>Spring Boot App for OpenWeatherMap</description>
+	<url>https://m4j.ru/meteo-ow</url>
+	<inceptionYear>2021</inceptionYear>
 
-    <modules>
-        <module>parent</module>
-        <module>share</module>
-    </modules>
+	<modules>
+		<module>parent</module>
+		<module>share</module>
+	</modules>
 
-    <scm>
-        <connection>scm:git:https://github.com/m4j-git/meteo-bom</connection>
-        <url>https://github.com/m4j-git/meteo-bom</url>
-    </scm>
+	<scm>
+		<connection>scm:git:https://github.com/m4j-git/meteo-bom</connection>
+		<url>https://github.com/m4j-git/meteo-bom</url>
+	</scm>
 
-    <build>
+	<build>
 
-    </build>
+	</build>
 
 
 
