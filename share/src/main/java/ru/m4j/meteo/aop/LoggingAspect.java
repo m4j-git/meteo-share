@@ -28,7 +28,7 @@ import org.springframework.core.env.Profiles;
 @Aspect
 public class LoggingAspect {
 
-    private final static String SPRING_PROFILE_DEVELOPMENT = "dev";
+    //private final static String SPRING_PROFILE_DEVELOPMENT = "dev";
     private final Environment env;
 
     public LoggingAspect(Environment env) {
@@ -77,7 +77,6 @@ public class LoggingAspect {
      */
     @AfterThrowing(pointcut = "applicationPackagePointcut() && springBeanPointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
-        if (env.acceptsProfiles(Profiles.of(SPRING_PROFILE_DEVELOPMENT))) {
             logger(joinPoint)
                     .error(
                             "Exception in {}() with cause = '{}' and exception = '{}'",
@@ -86,14 +85,6 @@ public class LoggingAspect {
                             e.getMessage(),
                             e
                     );
-        } else {
-            logger(joinPoint)
-                    .error(
-                            "Exception in {}() with cause = {}",
-                            joinPoint.getSignature().getName(),
-                            e.getCause() != null ? e.getCause() : "NULL"
-                    );
-        }
     }
 
     /**
