@@ -42,8 +42,13 @@ public class AppInfo {
         } catch (UnknownHostException e) {
             log.warn("The host name could not be determined, using `localhost` as fallback");
         }
-        log.info("\n----------------------------------------------------------\n\t" + "Application '{}' is running! Access URLs:\n\t" + "Local: \t\t{}://localhost:{}{}\n\t" + "External: \t{}://{}:{}{}\n\t" + "Profile(s): \t{}\n\t" + "Git branch: \t{}\n\t" + "Build info: \t{} build {} time {}\n" + "----------------------------------------------------------",
-                env.getProperty("spring.application.name"), protocol, serverPort, contextPath, protocol, hostAddress, serverPort, contextPath, env.getActiveProfiles(), env.getProperty("maven.branch-name"), build.getVersion(), env.getProperty("maven.build-number"), build.getTime());
+        log.info(
+                "\n----------------------------------------------------------\n\t" + "Application '{}' is running! Access URLs:\n\t"
+                        + "Local: \t\t{}://localhost:{}{}\n\t" + "External: \t{}://{}:{}{}\n\t" + "Profile(s): \t{}\n\t" + "Git branch: \t{}\n\t"
+                        + "Build info: \t{} build {} time {}\n" + "----------------------------------------------------------",
+                env.getProperty("spring.application.name"), protocol, serverPort, contextPath, protocol, hostAddress, serverPort, contextPath,
+                env.getActiveProfiles(), env.getProperty("maven.branch-name"), build.getVersion(), env.getProperty("maven.build-number"),
+                build.getTime());
     }
 
 }
