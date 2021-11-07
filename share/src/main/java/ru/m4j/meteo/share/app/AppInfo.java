@@ -20,8 +20,8 @@ public class AppInfo {
 
     static final Logger log = LoggerFactory.getLogger(AppInfo.class);
 
-    private Environment env;
-    private BuildProperties build;
+    private final Environment env;
+    private final BuildProperties build;
 
     public AppInfo(Environment env, BuildProperties build) {
         this.env = env;
