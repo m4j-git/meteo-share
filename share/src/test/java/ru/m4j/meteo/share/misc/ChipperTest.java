@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import ru.m4j.meteo.share.misc.Chipper;
-
 public class ChipperTest {
 
     @Test

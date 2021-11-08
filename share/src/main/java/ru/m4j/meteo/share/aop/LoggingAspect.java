@@ -27,6 +27,7 @@ import org.springframework.core.env.Environment;
 public class LoggingAspect {
 
     //private final static String SPRING_PROFILE_DEVELOPMENT = "dev";
+    @SuppressWarnings("unused")
     private final Environment env;
 
     public LoggingAspect(Environment env) {
@@ -45,7 +46,7 @@ public class LoggingAspect {
     /**
      * Pointcut that matches all Spring beans in the application's main packages.
      */
-    @Pointcut("within(ru.m4j.meteo.ow.repo..*)" + " || within(ru.m4j.meteo.*.service..*)" + " || within(ru.m4j.meteo.* .rest..*)")
+    @Pointcut("within(ru.m4j.meteo.*.repo..*)" + " || within(ru.m4j.meteo.*.service..*)" + " || within(ru.m4j.meteo.* .rest..*)")
     public void applicationPackagePointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
