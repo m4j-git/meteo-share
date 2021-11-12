@@ -188,13 +188,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/m4j-git/meteo-bom</url>
-		</repository>
-	</distributionManagement>
 
 	<build>
 		<finalName>meteo-bom</finalName>
