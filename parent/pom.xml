@@ -411,7 +411,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.9.0</version>
+					<version>3.9.1</version>
 				</plugin>
 
 				<plugin>
@@ -445,7 +445,6 @@
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
 			</plugin>
-
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -484,9 +483,21 @@
 			</plugin>
 			
 			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.2</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<skipEmptyReport>false</skipEmptyReport>
+					<failOnViolation>true</failOnViolation>
+					<failurePriority>5</failurePriority>
+					<printFailingErrors>true</printFailingErrors>
+					<analysisCache>true</analysisCache>
+					<!-- enable incremental analysis -->
+					<rulesets>
+						<!-- A rule set, that comes bundled with PMD -->
+						<!--ruleset>${resource.path}/pmd-exclude.xml</ruleset -->
+					</rulesets>
+				</configuration>
 			</plugin>
 			
 			<plugin>
