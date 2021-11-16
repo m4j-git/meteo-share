@@ -75,8 +75,8 @@
 		<h2.version>1.4.200</h2.version>
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
-        
-        <spring-cloud.version>2020.0.4</spring-cloud.version>
+
+		<spring-cloud.version>2020.0.4</spring-cloud.version>
 	</properties>
 
 	<dependencyManagement>
@@ -186,7 +186,7 @@
 				<artifactId>jettison</artifactId>
 				<version>1.4.0</version>
 			</dependency>
-            
+
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -472,27 +472,9 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.13.0</version>
-				<configuration>
-					<skipEmptyReport>false</skipEmptyReport>
-					<failOnViolation>true</failOnViolation>
-					<failurePriority>5</failurePriority>
-					<printFailingErrors>true</printFailingErrors>
-					<analysisCache>true</analysisCache>
-					<!-- enable incremental analysis -->
-					<rulesets>
-						<!-- A rule set, that comes bundled with PMD -->
-						<!--ruleset>${resource.path}/pmd-exclude.xml</ruleset -->
-					</rulesets>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>4.0.0</version>
+				<version>4.4.2.2</version>
 			</plugin>
 
 			<plugin>
@@ -500,7 +482,13 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
-
+			
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.2</version>
+			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>

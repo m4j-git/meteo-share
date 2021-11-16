@@ -26,7 +26,6 @@ import org.springframework.core.env.Environment;
 @Aspect
 public class LoggingAspect {
 
-    //private final static String SPRING_PROFILE_DEVELOPMENT = "dev";
     @SuppressWarnings("unused")
     private final Environment env;
 
