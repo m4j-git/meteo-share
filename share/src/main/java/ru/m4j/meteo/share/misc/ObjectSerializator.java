@@ -3,18 +3,17 @@
  */
 package ru.m4j.meteo.share.misc;
 
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class ObjectSerializator<T> {
+import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
+public class ObjectSerializator<T> {
 
     @SuppressWarnings("unused")
     public List<T> readCsvFromFileV1(final File file, final Class<T> clazz) throws IOException {

@@ -3,9 +3,9 @@
  */
 package ru.m4j.meteo.share.misc;
 
-import sun.misc.Unsafe;
-
 import java.lang.reflect.Field;
+
+import sun.misc.Unsafe;
 
 public class Fix {
 
