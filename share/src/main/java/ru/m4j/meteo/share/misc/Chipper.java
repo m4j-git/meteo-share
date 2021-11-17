@@ -4,6 +4,8 @@
 package ru.m4j.meteo.share.misc;
 
 import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 import java.util.Base64;
 
@@ -59,7 +61,7 @@ public class Chipper {
         return decryptedValue;
     }
 
-    private Key getKey() throws Exception {
+    private Key getKey() throws NoSuchAlgorithmException, InvalidKeySpecException {
         final SecretKeyFactory factory = SecretKeyFactory.getInstance(keygenspec);
         final KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 65536, 128);
         final SecretKey tmp = factory.generateSecret(spec);
