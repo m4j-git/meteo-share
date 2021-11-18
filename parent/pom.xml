@@ -57,7 +57,7 @@
 		<dependency.locations.enabled>false</dependency.locations.enabled>
 		<meteo.project.version>${project.version}</meteo.project.version>
 		<resource.path>.</resource.path>
-		<change.log.path>src${file.separator}main${file.separator}resources${file.separator}db${file.separator}</change.log.path>
+		<change.log.path>${project.basedir}/src${file.separator}main${file.separator}resources${file.separator}db${file.separator}</change.log.path>
 		
 		<!-- Dependency versions -->
 		<spring-boot.version>2.5.5</spring-boot.version>
