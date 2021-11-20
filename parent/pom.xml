@@ -58,7 +58,7 @@
 		<meteo.project.version>${project.version}</meteo.project.version>
 		<resource.path>.</resource.path>
 		<change.log.path>${project.basedir}/src${file.separator}main${file.separator}resources${file.separator}db${file.separator}</change.log.path>
-		
+
 		<!-- Dependency versions -->
 		<spring-boot.version>2.5.5</spring-boot.version>
 		<jackson.version>2.13.0</jackson.version>
@@ -77,8 +77,11 @@
 		<h2.version>1.4.200</h2.version>
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
-
+		<webjars.bootstrap.version>4.6.1</webjars.bootstrap.version>
+		<webjars.jquery.version>1.4.0</webjars.jquery.version>
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
+		<xstream.version>1.4.18</xstream.version>
+		<jettison.version>1.4.0</jettison.version>
 	</properties>
 
 	<dependencyManagement>
@@ -176,17 +179,26 @@
 				<artifactId>modbus-master-tcp</artifactId>
 				<version>${modbus-master-tcp}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>${webjars.bootstrap.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery</artifactId>
+				<version>${webjars.jquery.version</version>
+			</dependency>
 			<!--xstream -->
 			<dependency>
 				<groupId>com.thoughtworks.xstream</groupId>
 				<artifactId>xstream</artifactId>
-				<version>1.4.18</version>
+				<version>${xstream.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.codehaus.jettison</groupId>
 				<artifactId>jettison</artifactId>
-				<version>1.4.0</version>
+				<version>${jettison.version}</version>
 			</dependency>
 
 			<dependency>
@@ -483,7 +495,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
@@ -501,7 +513,7 @@
 					</rulesets>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
