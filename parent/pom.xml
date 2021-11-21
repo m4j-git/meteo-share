@@ -187,7 +187,7 @@
 			<dependency>
 				<groupId>org.webjars</groupId>
 				<artifactId>jquery</artifactId>
-				<version>${webjars.jquery.version</version>
+				<version>${webjars.jquery.version}</version>
 			</dependency>
 			<!--xstream -->
 			<dependency>
@@ -336,6 +336,7 @@
 					<configuration>
 						<!--skipTests>${skip.tests}</skipTests -->
 						<testFailureIgnore>${maven.test.failure.ignore}</testFailureIgnore>
+						<skipAfterFailureCount>1</skipAfterFailureCount>
 					</configuration>
 				</plugin>
 
