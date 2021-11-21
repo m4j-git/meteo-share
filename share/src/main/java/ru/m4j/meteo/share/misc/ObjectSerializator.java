@@ -15,7 +15,6 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 public class ObjectSerializator<T> {
 
-    @SuppressWarnings("unused")
     public List<T> readCsvFromFileV1(final File file, final Class<T> clazz) throws IOException {
         try (final FileInputStream fis = new FileInputStream(file)) {
             final CsvMapper mapperCsv = new CsvMapper();

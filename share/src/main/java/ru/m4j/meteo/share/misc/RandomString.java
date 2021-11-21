@@ -8,13 +8,12 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
-@SuppressWarnings("unused")
 public class RandomString {
 
-    public static final String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String lower = upper.toLowerCase(Locale.ROOT);
-    public static final String digits = "0123456789";
-    public static final String alphanum = upper + lower + digits;
+    private static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String LOWER = UPPER.toLowerCase(Locale.ROOT);
+    private static final String DIGITIS = "0123456789";
+    private static final String ALPHNUM = UPPER + LOWER + DIGITIS;
     private final Random random;
     private final char[] symbols;
     private final char[] buf;
@@ -32,7 +31,7 @@ public class RandomString {
      * Create an alphanumeric string generator.
      */
     public RandomString(final int length, final Random random) {
-        this(length, random, alphanum);
+        this(length, random, ALPHNUM);
     }
 
     /**
