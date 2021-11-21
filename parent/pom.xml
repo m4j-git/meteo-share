@@ -78,7 +78,7 @@
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
 		<webjars.bootstrap.version>4.6.1</webjars.bootstrap.version>
-		<webjars.jquery.version>1.4.0</webjars.jquery.version>
+		<webjars.jquery.version>3.6.0</webjars.jquery.version>
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
 		<xstream.version>1.4.18</xstream.version>
 		<jettison.version>1.4.0</jettison.version>
