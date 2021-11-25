@@ -3,19 +3,19 @@
  */
 package ru.m4j.meteo.share.misc;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-public class ChipperTest {
+class ChipperTest {
 
     @Test
-    public void testEqualsEncryptDecrypt() throws Exception {
-        final String data = "qwerty";
-        final Chipper chipper = new Chipper("password", "salt");
-        final String value = chipper.encrypt(data);
-        final String res = chipper.decrypt(value);
-        assertEquals(data, res);
+    void testEqualsEncryptDecrypt() throws Exception {
+        String data = "qwerty";
+        Chipper chipper = new Chipper("password", "salt");
+        String value = chipper.encrypt(data);
+        String res = chipper.decrypt(value);
+        assertThat(data).isEqualTo(res);
     }
 
 }

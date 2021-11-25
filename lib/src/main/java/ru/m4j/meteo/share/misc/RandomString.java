@@ -27,30 +27,18 @@ public class RandomString {
         this.buf = new char[length];
     }
 
-    /**
-     * Create an alphanumeric string generator.
-     */
     public RandomString(final int length, final Random random) {
         this(length, random, ALPHNUM);
     }
 
-    /**
-     * Create an alphanumeric strings from a secure generator.
-     */
     public RandomString(final int length) {
         this(length, new SecureRandom());
     }
 
-    /**
-     * Create session identifiers.
-     */
     public RandomString() {
         this(21);
     }
 
-    /**
-     * Generate a random string.
-     */
     public String nextString() {
         for (int idx = 0; idx < buf.length; ++idx) {
             buf[idx] = symbols[random.nextInt(symbols.length)];
