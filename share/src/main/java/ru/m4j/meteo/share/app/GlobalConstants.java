@@ -5,7 +5,7 @@ package ru.m4j.meteo.share.app;
 
 import java.io.File;
 
-public class GlobalConstants {
+public final class GlobalConstants {
 
     private GlobalConstants() {
 

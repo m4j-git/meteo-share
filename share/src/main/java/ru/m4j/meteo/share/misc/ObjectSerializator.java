@@ -16,7 +16,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 public class ObjectSerializator<T> {
 
     public List<T> readCsvFromFileV1(final File file, final Class<T> clazz) throws IOException {
-        try (final FileInputStream fis = new FileInputStream(file)) {
+        try (FileInputStream fis = new FileInputStream(file)) {
             final CsvMapper mapperCsv = new CsvMapper();
             final CsvSchema schema = mapperCsv.schemaFor(clazz).withHeader().withColumnReordering(true).withColumnSeparator('\t');
             final ObjectReader reader = mapperCsv.readerFor(clazz).with(schema);

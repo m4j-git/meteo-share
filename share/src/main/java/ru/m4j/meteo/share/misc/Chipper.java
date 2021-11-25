@@ -16,15 +16,15 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Chipper {
 
-    private static final String algorithm = "AES";
-    private static final String keygenspec = "PBKDF2WithHmacSHA1";
-    private static final String cipherSpec = "AES/CBC/PKCS5Padding";
-    final Logger log = LoggerFactory.getLogger(Chipper.class);
+    private static final String ALGORITHM = "AES";
+    private static final String KEYGENSPEC = "PBKDF2WithHmacSHA1";
+    private static final String CIPHERSPEC = "AES/CBC/PKCS5Padding";
+
     private final String password;
     private final String salt;
 
@@ -42,7 +42,7 @@ public class Chipper {
 
     public String encrypt(final String data) throws Exception {
         final Key key = getKey();
-        final Cipher cipher = Cipher.getInstance(cipherSpec);
+        final Cipher cipher = Cipher.getInstance(CIPHERSPEC);
         cipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(new byte[16]));
         final byte[] encVal = cipher.doFinal(data.getBytes());
         final String encryptedValue = Base64.getEncoder().encodeToString(encVal);
@@ -52,7 +52,7 @@ public class Chipper {
 
     public String decrypt(final String encryptedData) throws Exception {
         final Key key = getKey();
-        final Cipher cipher = Cipher.getInstance(cipherSpec);
+        final Cipher cipher = Cipher.getInstance(CIPHERSPEC);
         cipher.init(Cipher.DECRYPT_MODE, key, new IvParameterSpec(new byte[16]));
         final byte[] decodedValue = Base64.getDecoder().decode(encryptedData);
         final byte[] decValue = cipher.doFinal(decodedValue);
@@ -62,10 +62,10 @@ public class Chipper {
     }
 
     private Key getKey() throws NoSuchAlgorithmException, InvalidKeySpecException {
-        final SecretKeyFactory factory = SecretKeyFactory.getInstance(keygenspec);
+        final SecretKeyFactory factory = SecretKeyFactory.getInstance(KEYGENSPEC);
         final KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 65536, 128);
         final SecretKey tmp = factory.generateSecret(spec);
-        return new SecretKeySpec(tmp.getEncoded(), algorithm);
+        return new SecretKeySpec(tmp.getEncoded(), ALGORITHM);
     }
 
 }
