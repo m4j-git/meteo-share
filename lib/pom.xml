@@ -4,15 +4,15 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>meteo-bom-share</artifactId>
+	<artifactId>meteo-share-bom</artifactId>
 	<packaging>jar</packaging>
-	<name>meteo-bom-share</name>
+	<name>meteo-share-bom</name>
 
 	<parent>
 		<groupId>ru.m4j.meteo</groupId>
 		<artifactId>meteo-bom-parent</artifactId>
 		<version>21.4.9-SNAPSHOT</version>
-		<relativePath>../parent</relativePath>
+		<relativePath></relativePath>
 	</parent>
 
 	<dependencies>
@@ -91,7 +91,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/m4j-git/meteo-bom</url>
+			<url>https://maven.pkg.github.com/m4j-git/meteo-share</url>
 		</repository>
 	</repositories>
 
@@ -99,7 +99,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/m4j-git/meteo-bom</url>
+			<url>https://maven.pkg.github.com/m4j-git/meteo-share</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>

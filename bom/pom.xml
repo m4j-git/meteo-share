@@ -5,10 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ru.m4j.meteo</groupId>
-	<artifactId>meteo-bom-parent</artifactId>
+	<artifactId>meteo-share-bom</artifactId>
 	<version>21.4.9-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>meteo-bom-parent</name>
+	<name>meteo-share-bom</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -42,8 +42,8 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:https://github.com/m4j-git/meteo-bom</connection>
-		<url>https://github.com/m4j-git/meteo-bom</url>
+		<connection>scm:git:https://github.com/m4j-git/meteo-share</connection>
+		<url>https://github.com/m4j-git/meteo-share</url>
 	</scm>
 
 	<properties>
@@ -583,7 +583,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/m4j-git/meteo-bom</url>
+			<url>https://maven.pkg.github.com/m4j-git/meteo-share</url>
 		</repository>
 	</repositories>
 	
@@ -591,7 +591,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/m4j-git/meteo-bom</url>
+			<url>https://maven.pkg.github.com/m4j-git/meteo-share</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>

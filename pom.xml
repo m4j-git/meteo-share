@@ -14,13 +14,13 @@
 	<inceptionYear>2021</inceptionYear>
 
 	<modules>
-		<module>parent</module>
-		<module>share</module>
+		<module>bom</module>
+		<module>lib</module>
 	</modules>
 
 	<scm>
-		<connection>scm:git:https://github.com/m4j-git/meteo-bom</connection>
-		<url>https://github.com/m4j-git/meteo-bom</url>
+		<connection>scm:git:https://github.com/m4j-git/meteo-share</connection>
+		<url>https://github.com/m4j-git/meteo-share</url>
 	</scm>
 
 
