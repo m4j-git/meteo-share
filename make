@@ -38,8 +38,8 @@ fi
 
 if [ "$1" = "deploy" ]; then
   mvn clean
-  mvn -f parent deploy
-  mvn -f share  deploy
+  mvn -f bom deploy
+  mvn -f lib  deploy
 fi
 
 if [ "$1" = "kill" ]; then

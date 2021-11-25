@@ -19,8 +19,8 @@
 	</modules>
 
 	<scm>
-		<connection>scm:git:https://github.com/m4j-git/meteo-share</connection>
-		<url>https://github.com/m4j-git/meteo-share</url>
+		<connection>scm:git:https://github.com/m4j-git/meteo-share.git</connection>
+		<url>https://github.com/m4j-git/meteo-share.git</url>
 	</scm>
 
 
