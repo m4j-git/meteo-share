@@ -3,8 +3,10 @@
  */
 package ru.m4j.meteo.share.misc;
 
+import java.security.GeneralSecurityException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 import java.util.Base64;
@@ -40,20 +42,26 @@ public class Chipper {
         return new Chipper(pswd, salt);
     }
 
-    public String encrypt(final String data) throws Exception {
+    public String encrypt(final String data) throws GeneralSecurityException {
         final Key key = getKey();
         final Cipher cipher = Cipher.getInstance(CIPHERSPEC);
-        cipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(new byte[16]));
+        byte[] bytesIV = new byte[16];
+        SecureRandom random = new SecureRandom();
+        random.nextBytes(bytesIV);
+        cipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(bytesIV));
         final byte[] encVal = cipher.doFinal(data.getBytes());
         final String encryptedValue = Base64.getEncoder().encodeToString(encVal);
         log.info("Encrypted value of " + data + ": " + encryptedValue);
         return encryptedValue;
     }
 
-    public String decrypt(final String encryptedData) throws Exception {
+    public String decrypt(final String encryptedData) throws GeneralSecurityException {
         final Key key = getKey();
         final Cipher cipher = Cipher.getInstance(CIPHERSPEC);
-        cipher.init(Cipher.DECRYPT_MODE, key, new IvParameterSpec(new byte[16]));
+        byte[] bytesIV = new byte[16];
+        SecureRandom random = new SecureRandom();
+        random.nextBytes(bytesIV);
+        cipher.init(Cipher.DECRYPT_MODE, key, new IvParameterSpec(bytesIV));
         final byte[] decodedValue = Base64.getDecoder().decode(encryptedData);
         final byte[] decValue = cipher.doFinal(decodedValue);
         final String decryptedValue = new String(decValue);

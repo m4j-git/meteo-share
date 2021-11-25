@@ -5,6 +5,7 @@ package ru.m4j.meteo.share.app;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.springframework.boot.context.event.ApplicationStartedEvent;
@@ -41,17 +42,16 @@ public class AppInfo {
         } catch (UnknownHostException e) {
             log.warn("The host name could not be determined, using `localhost` as fallback");
         }
-        log.info(
-            "\n----------------------------------------------------------\n\t" + "Application '{}' is running! Access URLs:\n\t"
-                + "Local: \t\t{}://localhost:{}{}\n\t" + "External: \t{}://{}:{}{}\n\t" + "Profile(s): \t{}\n\t" + "Git branch: \t{}\n\t"
-                + "Build info: \t{} build {} time {}\n" + "----------------------------------------------------------",
-            env.getProperty("spring.application.name"),
-            protocol, serverPort, contextPath, protocol, hostAddress, serverPort, contextPath,
-            env.getActiveProfiles(),
-            env.getProperty("maven.branch-name"),
-            build.getVersion(),
-            env.getProperty("maven.build-number"),
-            build.getTime());
+        log.info("----------------------------------------------------------");
+        log.info("Application {} is running!", env.getProperty("spring.application.name"));
+        log.info("Access URLs:");
+        log.info("Local: {}:localhost:{}{} ", protocol, serverPort, contextPath);
+        log.info("External: {}:{}:{}{} ", protocol, hostAddress, serverPort, contextPath);
+        log.info("Profile(s): {}", Arrays.toString(env.getActiveProfiles()));
+        log.info("Git branch: {} ", env.getProperty("maven.branch-name"));
+        log.info("Build info: {} build {} time {}", build.getVersion(), env.getProperty("maven.build-number"), build.getTime());
+        log.info("----------------------------------------------------------");
+
     }
 
 }
