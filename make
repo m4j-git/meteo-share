@@ -9,31 +9,37 @@ cd $absdir
 
 if [ "$1" = "prod" ]; then
   mvn clean 
-  mvn install  -P prod,mysql -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn install  -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "old" ]; then
   mvn clean
-  mvn install -P prod,postgres -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn install  -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "stage" ]; then
   mvn clean
-  mvn install -P stage,mysql -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn install  -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "dev" ]; then
   mvn clean
-  mvn install -P dev,h2 -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn install  -T 1C -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "test" ]; then
   mvn clean
-  mvn test -P dev,h2 -T 1C -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -DargLine="-Xms1024m -Xmx8192m"
+  mvn test  -T 1C -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "site" ]; then
-  mvn site -P prod,mysql -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn site  -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+fi
+
+if [ "$1" = "deploy" ]; then
+  mvn clean
+  mvn -f parent deploy
+  mvn -f share  deploy
 fi
 
 if [ "$1" = "kill" ]; then
@@ -56,34 +62,6 @@ if [ "$1" = "rm" ]; then
   rm -r .attach_pid*
 fi
 
-if [ "$1" = "deploy" ]; then
-  echo 'Copy files...'
-
-  scp target/meteo-provider.war root@fir:/opt/tomcat/9.0/webapps
-
-  echo 'Restart server...'
-
-  ssh -tt root@fir <<EOF
- 
- systemctl stop  tomcatd
- 
- sleep 1s
- 
- if cd /opt/tomcat/9.0/logs/; then rm -f *; fi
- if cd /opt/tomcat/9.0/webapps/; then rm -rf meteo-provider; fi
- 
- 
- systemctl restart  tomcatd
- exit
-EOF
-
-  sleep 3s
-
-  wget -O wget.txt http://fir:8080/meteo-provider
-  rm wget.txt
-
-  echo 'Bye'
-fi
 
 #git submodule foreach --recursive 'git push' && git push
 
