@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         java: [ '17' ]
-        os: [ 'ubuntu-latest', 'windows-2019' ]
+        os: [ 'ubuntu-latest' ]
     name: Java ${{ matrix.Java }} (${{ matrix.os }})
     steps:
       - uses: actions/checkout@v2
@@ -32,6 +32,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -DskipTests
+        run: mvn deploy -DskipTests --file bom/pom.xml
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy -DskipTests --file lib/pom.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
