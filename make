@@ -33,7 +33,7 @@ if [ "$1" = "test" ]; then
 fi
 
 if [ "$1" = "site" ]; then
-  mvn site  -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn site  -DskipTests -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
 fi
 
 if [ "$1" = "deploy" ]; then
