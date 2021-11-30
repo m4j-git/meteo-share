@@ -77,8 +77,11 @@
 		<h2.version>1.4.200</h2.version>
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
-		<webjars.bootstrap.version>4.6.1</webjars.bootstrap.version>
+
+		<webjars.bootstrap.version>5.1.3</webjars.bootstrap.version>
 		<webjars.jquery.version>3.6.0</webjars.jquery.version>
+		<webjars.font-awesome.version>5.15.4</webjars.font-awesome.version>
+
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
 		<xstream.version>1.4.18</xstream.version>
 		<jettison.version>1.4.0</jettison.version>
@@ -190,6 +193,11 @@
 				<groupId>org.webjars</groupId>
 				<artifactId>jquery</artifactId>
 				<version>${webjars.jquery.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>font-awesome</artifactId>
+				<version>${webjars.font-awesome.version}</version>
 			</dependency>
 			<!--xstream -->
 			<dependency>
@@ -578,7 +586,7 @@
 		</plugins>
 
 	</reporting>
-	
+
 	<repositories>
 		<repository>
 			<id>github</id>
@@ -586,7 +594,7 @@
 			<url>https://maven.pkg.github.com/m4j-git/meteo-share</url>
 		</repository>
 	</repositories>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>github</id>
@@ -595,5 +603,5 @@
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
-	
+
 </project>
