@@ -18,7 +18,10 @@ public class ObjectSerializator<T> {
     public List<T> readCsvFromFileV1(final File file, final Class<T> clazz) throws IOException {
         try (FileInputStream fis = new FileInputStream(file)) {
             final CsvMapper mapperCsv = new CsvMapper();
-            final CsvSchema schema = mapperCsv.schemaFor(clazz).withHeader().withColumnReordering(true).withColumnSeparator('\t');
+            final CsvSchema schema = mapperCsv.schemaFor(clazz)
+                .withHeader()
+                .withColumnReordering(true)
+                .withColumnSeparator('\t');
             final ObjectReader reader = mapperCsv.readerFor(clazz).with(schema);
             return reader.<T>readValues(fis).readAll();
         }
@@ -26,7 +29,10 @@ public class ObjectSerializator<T> {
 
     public List<T> readCsvFromFileV2(final InputStream stream, final Class<T> clazz) throws IOException {
         final CsvMapper mapperCsv = new CsvMapper();
-        final CsvSchema schema = mapperCsv.schemaFor(clazz).withHeader().withColumnReordering(true).withColumnSeparator('\t');
+        final CsvSchema schema = mapperCsv.schemaFor(clazz)
+            .withHeader()
+            .withColumnReordering(true)
+            .withColumnSeparator('\t');
         final ObjectReader reader = mapperCsv.readerFor(clazz).with(schema);
         return reader.<T>readValues(stream).readAll();
     }
