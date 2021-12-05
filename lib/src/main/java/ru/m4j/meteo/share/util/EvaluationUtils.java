@@ -73,19 +73,19 @@ public final class EvaluationUtils {
         if (object instanceof Number) {
             if (object instanceof BigDecimal) {
                 return (BigDecimal) object;
-            } else if (object instanceof BigInteger) {
-                return new BigDecimal((BigInteger) object);
+            } else if (object instanceof BigInteger obj) {
+                return new BigDecimal(obj);
             } else if (object instanceof Byte) {
                 return new BigDecimal(((Byte) object).intValue());
             } else if (object instanceof Short) {
                 return new BigDecimal(((Short) object).intValue());
             } else if (object instanceof Integer) {
                 return new BigDecimal(((Integer) object).intValue());
-            } else if (object instanceof Long) {
-                return new BigDecimal(((Long) object).longValue());
-            } else if (object instanceof Float) {
+            } else if (object instanceof Long obj) {
+                return new BigDecimal(obj.longValue());
+            } else if (object instanceof Float obj) {
                 //noinspection UnpredictableBigDecimalConstructorCall
-                return new BigDecimal(((Float) object).doubleValue());
+                return new BigDecimal(obj.doubleValue());
             } else if (object instanceof Double) {
                 //noinspection UnpredictableBigDecimalConstructorCall
                 return new BigDecimal(((Double) object).doubleValue());

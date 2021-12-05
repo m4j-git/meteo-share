@@ -57,7 +57,7 @@ public final class AggregateCharSequence implements Serializable, IWritableCharS
 
     private static final int[] UNIQUE_ZERO_OFFSET = new int[] { 0 };
 
-    private final CharSequence[] values;
+    private final transient CharSequence[] values;
     private final int[] offsets;
     private final int length;
 
