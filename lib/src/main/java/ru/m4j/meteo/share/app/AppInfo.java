@@ -45,8 +45,8 @@ public class AppInfo {
         log.info("----------------------------------------------------------");
         log.info("Application {} is running!", env.getProperty("spring.application.name"));
         log.info("Access URLs:");
-        log.info("Local: {}:localhost:{}{} ", protocol, serverPort, contextPath);
-        log.info("External: {}:{}:{}{} ", protocol, hostAddress, serverPort, contextPath);
+        log.info("Local: {}://localhost:{}{} ", protocol, serverPort, contextPath);
+        log.info("External: {}://{}:{}{} ", protocol, hostAddress, serverPort, contextPath);
         log.info("Profile(s): {}", Arrays.toString(env.getActiveProfiles()));
         log.info("Git branch: {} ", env.getProperty("maven.branch-name"));
         log.info("Build info: {} build {} time {}", build.getVersion(), env.getProperty("maven.build-number"), build.getTime());
