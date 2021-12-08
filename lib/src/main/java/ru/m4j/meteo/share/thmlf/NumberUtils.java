@@ -17,7 +17,7 @@
  *
  * =============================================================================
  */
-package ru.m4j.meteo.share.util;
+package ru.m4j.meteo.share.thmlf;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

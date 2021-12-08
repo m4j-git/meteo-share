@@ -17,7 +17,7 @@
  *
  * =============================================================================
  */
-package ru.m4j.meteo.share.util;
+package ru.m4j.meteo.share.thmlf;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -17,7 +17,7 @@
  *
  * =============================================================================
  */
-package ru.m4j.meteo.share.util;
+package ru.m4j.meteo.share.thmlf;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -30,7 +30,7 @@ import java.util.Map;
  *
  * @author Daniel Fern&aacute;ndez
  *
- * @since 3.0.0 (renamed from ru.m4j.meteo.share.util.EvaluationUtil)
+ * @since 3.0.0 (renamed from ru.m4j.meteo.share.thmlf.EvaluationUtil)
  *
  */
 public final class EvaluationUtils {
