@@ -166,11 +166,7 @@ public final class StringUtils {
             return null;
         }
         Validate.isTrue(beginIndex >= 0, "Begin index must be >= 0");
-
-        // The String constructor is called on purpose to avoid problems from
-        // creating substrings out of large amounts of long Strings (creating
-        // a substring does not free the memory occupied by the original String).
-        return new String(target.toString().substring(beginIndex, endIndex));
+        return target.toString().substring(beginIndex, endIndex);
 
     }
 
@@ -231,10 +227,7 @@ public final class StringUtils {
             return null;
         }
 
-        // The String constructor is called on purpose to avoid problems from
-        // creating substrings out of large amounts of long Strings (creating
-        // a substring does not free the memory occupied by the original String).
-        return new String(str.substring(0, index));
+        return str.substring(0, index);
 
     }
 
@@ -414,7 +407,7 @@ public final class StringUtils {
         Validate.notNull(separator, "Separator cannot be null");
 
         if (target == null) {
-            return null;
+            return new String[0];
         }
 
         final StringTokenizer strTok = new StringTokenizer(target.toString(), separator);

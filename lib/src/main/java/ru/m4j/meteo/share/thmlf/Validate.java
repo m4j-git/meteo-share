@@ -43,7 +43,7 @@ public final class Validate {
     }
 
     public static void notEmpty(final Collection<?> object, final String message) {
-        if ((object == null) || (object.size() == 0)) {
+        if ((object == null) || (object.isEmpty())) {
             throw new IllegalArgumentException(message);
         }
     }
