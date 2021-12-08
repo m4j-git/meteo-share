@@ -95,7 +95,6 @@
 				<artifactId>maven-site-plugin</artifactId>
 			</plugin>
 
-
 		</plugins>
 	</build>
 
