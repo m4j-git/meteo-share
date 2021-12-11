@@ -25,10 +25,6 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-import org.unbescape.html.HtmlEscape;
-import org.unbescape.java.JavaEscape;
-import org.unbescape.javascript.JavaScriptEscape;
-
 /**
  * <p>
  * Utility methods for String objects.
@@ -658,86 +654,6 @@ public final class StringUtils {
 
         return new String(buffer);
 
-    }
-
-    /**
-     * <p>
-     * XML-escapes the specified text.
-     * </p>
-     *
-     * @param target the text to be escaped
-     * @return the escaped text.
-     * @since 2.0.9
-     */
-    public static String escapeXml(final Object target) {
-        if (target == null) {
-            return null;
-        }
-        return HtmlEscape.escapeHtml4Xml(target.toString());
-    }
-
-    /**
-     * <p>
-     * Escapes the specified target text as required for JavaScript code.
-     * </p>
-     *
-     * @param target the text to be escaped
-     * @return the escaped text.
-     * @since 2.0.11
-     */
-    public static String escapeJavaScript(final Object target) {
-        if (target == null) {
-            return null;
-        }
-        return JavaScriptEscape.escapeJavaScript(target.toString());
-    }
-
-    /**
-     * <p>
-     * Escapes the specified target text as required for Java code.
-     * </p>
-     *
-     * @param target the text to be escaped
-     * @return the escaped text.
-     * @since 2.0.11
-     */
-    public static String escapeJava(final Object target) {
-        if (target == null) {
-            return null;
-        }
-        return JavaEscape.escapeJava(target.toString());
-    }
-
-    /**
-     * <p>
-     * Un-escapes the specified JavaScript-escaped target text back to normal form.
-     * </p>
-     *
-     * @param target the text to be unescaped
-     * @return the unescaped text.
-     * @since 2.0.11
-     */
-    public static String unescapeJavaScript(final Object target) {
-        if (target == null) {
-            return null;
-        }
-        return JavaScriptEscape.unescapeJavaScript(target.toString());
-    }
-
-    /**
-     * <p>
-     * Un-escapes the specified Java-escaped target text back to normal form.
-     * </p>
-     *
-     * @param target the text to be unescaped
-     * @return the unescaped text.
-     * @since 2.0.11
-     */
-    public static String unescapeJava(final Object target) {
-        if (target == null) {
-            return null;
-        }
-        return JavaEscape.unescapeJava(target.toString());
     }
 
     public static String randomAlphanumeric(final int count) {
