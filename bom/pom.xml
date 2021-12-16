@@ -67,7 +67,7 @@
 		<swagger.version>1.5.20</swagger.version>
 		<hibernate.validator.version>7.0.1.Final</hibernate.validator.version>
 		<modelmapper.version>2.4.2</modelmapper.version>
-		<springboot.admin.starter.version>2.4.1</springboot.admin.starter.version>
+		<springboot.admin.starter.version>2.5.4 </springboot.admin.starter.version>
 		<spring-boot-starter-actuator.version>2.5.6</spring-boot-starter-actuator.version>
 
 		<org.apache.httpcomponents.client5.version>5.0.3</org.apache.httpcomponents.client5.version>
@@ -131,7 +131,7 @@
 				<groupId>de.codecentric</groupId>
 				<artifactId>spring-boot-admin-starter-server</artifactId>
 				<version>${springboot.admin.starter.version}</version>
-			</dependency>
+			</dependency>			
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-actuator</artifactId>
