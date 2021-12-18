@@ -74,7 +74,7 @@
 		<javax.mail.version>1.4.7</javax.mail.version>
 		<commons-io.version>2.8.0</commons-io.version>
 		<lombok.version>1.18.22</lombok.version>
-		<h2.version>1.4.200</h2.version>
+		<h2.version>2.0.202</h2.version>
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
 
