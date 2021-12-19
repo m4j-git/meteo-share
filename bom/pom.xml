@@ -61,7 +61,7 @@
 
 		<!-- Dependency versions -->
 		<spring-boot.version>2.6.1</spring-boot.version>
-		<springboot.admin.starter.version>2.5.4 </springboot.admin.starter.version>
+		<springboot.admin.starter.version>2.5.5 </springboot.admin.starter.version>
 		<spring-boot-starter-actuator.version>2.6.1</spring-boot-starter-actuator.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
 
