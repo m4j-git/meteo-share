@@ -60,7 +60,7 @@
 		<change.log.path>${project.basedir}/src${file.separator}main${file.separator}resources${file.separator}db${file.separator}</change.log.path>
 
 		<!-- Dependency versions -->
-		<spring-boot.version>2.5.5</spring-boot.version>
+		<spring-boot.version>2.6.1</spring-boot.version>
 		<jackson.version>2.13.0</jackson.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<io.springfox.version>3.0.0</io.springfox.version>
@@ -82,7 +82,7 @@
 		<webjars.jquery.version>3.6.0</webjars.jquery.version>
 		<webjars.font-awesome.version>5.15.4</webjars.font-awesome.version>
 
-		<spring-cloud.version>2020.0.4</spring-cloud.version>
+		<spring-cloud.version>2021.0.0</spring-cloud.version>
 		<xstream.version>1.4.18</xstream.version>
 		<jettison.version>1.4.0</jettison.version>
 
