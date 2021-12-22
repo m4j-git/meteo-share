@@ -216,7 +216,6 @@
 
 
 	<build>
-		<finalName>meteo-bom</finalName>
 
 		<resources>
 			<resource>
