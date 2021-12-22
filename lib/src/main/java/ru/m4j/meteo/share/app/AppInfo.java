@@ -50,6 +50,7 @@ public class AppInfo {
         log.info("Profile(s): {}", Arrays.toString(env.getActiveProfiles()));
         log.info("Git branch: {} ", env.getProperty("maven.branch-name"));
         log.info("Build info: {} build {} time {}", build.getVersion(), env.getProperty("maven.build-number"), build.getTime());
+        log.info("PID {}", ProcessHandle.current().pid());
         log.info("----------------------------------------------------------");
 
     }
