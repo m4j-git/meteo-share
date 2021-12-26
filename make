@@ -9,7 +9,7 @@ cd $absdir
 
 skip='-Dmaven.test.skip -DskipITs'
 
-MODULE_NAME=meteo-ya
+MODULE_NAME=meteo-share
 echo "make $MODULE_NAME"
 
 show_help(){
