@@ -62,7 +62,6 @@
 		<!-- Dependency versions -->
 		<spring-boot.version>2.6.1</spring-boot.version>
 		<springboot.admin.starter.version>2.5.5 </springboot.admin.starter.version>
-		<spring-boot-starter-actuator.version>2.6.1</spring-boot-starter-actuator.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
 
 		<javax.mail.version>1.4.7</javax.mail.version>
@@ -71,13 +70,14 @@
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<modelmapper.version>2.4.2</modelmapper.version>
 
-		<hibernate.validator.version>7.0.1.Final</hibernate.validator.version>
 		<mysql-connector-java.version>8.0.25</mysql-connector-java.version>
 
 		<org.apache.httpcomponents.client5.version>5.0.3</org.apache.httpcomponents.client5.version>
 		<commons-io.version>2.8.0</commons-io.version>
 
 		<lombok.version>1.18.22</lombok.version>
+		
+		<testcontainers.version>1.16.0</testcontainers.version>
 
 		<webjars.bootstrap.version>5.1.3</webjars.bootstrap.version>
 		<webjars.jquery.version>3.6.0</webjars.jquery.version>
@@ -85,9 +85,10 @@
 
 		<checkstyle.version>9.2</checkstyle.version>
 
-		<xstream.version>1.4.18</xstream.version>
-		<jettison.version>1.4.0</jettison.version>
 		<modbus-master-tcp>1.1.1</modbus-master-tcp>
+		
+		<swagger-annotations.version>2.1.6</swagger-annotations.version>
+		<springdoc-openapi-ui.version>1.6.1</springdoc-openapi-ui.version>
 	</properties>
 
 	<dependencyManagement>
@@ -95,14 +96,9 @@
 			<dependency>
 				<groupId>org.testcontainers</groupId>
 				<artifactId>testcontainers-bom</artifactId>
-				<version>1.16.0</version>
+				<version>${testcontainers.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.hibernate.validator</groupId>
-				<artifactId>hibernate-validator</artifactId>
-				<version>${hibernate.validator.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.modelmapper</groupId>
@@ -123,12 +119,12 @@
 			<dependency>
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-ui</artifactId>
-				<version>1.6.1</version>
+				<version>${springdoc-openapi-ui.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.swagger.core.v3</groupId>
 				<artifactId>swagger-annotations</artifactId>
-				<version>2.1.6</version>
+				<version>${swagger-annotations.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>de.codecentric</groupId>
@@ -143,7 +139,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-actuator</artifactId>
-				<version>${spring-boot-starter-actuator.version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents.client5</groupId>
@@ -190,17 +186,6 @@
 				<groupId>org.webjars</groupId>
 				<artifactId>font-awesome</artifactId>
 				<version>${webjars.font-awesome.version}</version>
-			</dependency>
-			<!--xstream -->
-			<dependency>
-				<groupId>com.thoughtworks.xstream</groupId>
-				<artifactId>xstream</artifactId>
-				<version>${xstream.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.codehaus.jettison</groupId>
-				<artifactId>jettison</artifactId>
-				<version>${jettison.version}</version>
 			</dependency>
 
 			<dependency>

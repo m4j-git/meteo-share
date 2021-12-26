@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2002-2022 meteo@m4j.ru
  */
-package ru.m4j.meteo.share.app;
+package ru.m4j.meteo.share.aop;
 
 import java.io.IOException;
 
@@ -12,8 +12,8 @@ import org.springframework.web.client.ResponseErrorHandler;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
 @Slf4j
+@Component
 public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
 
     @Override

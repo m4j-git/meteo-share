@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2002-2022 meteo@m4j.ru
  */
-package ru.m4j.meteo.share.misc;
+package ru.m4j.meteo.share.aop;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
