@@ -11,7 +11,7 @@ skip='-Dmaven.test.skip -DskipITs'
 
 
 show_help(){
-    echo -e "Usage: ./make build|git|check|deploy|test"
+    echo -e "Usage: ./make build|docker|check|deploy|test"
     exit
 }
 
