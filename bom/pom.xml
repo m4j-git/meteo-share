@@ -18,7 +18,7 @@
 	</parent>
 
 	<description>Parent pom providing dependency and plugin management for meteo projects</description>
-	<inceptionYear>2021</inceptionYear>
+	<inceptionYear>2022</inceptionYear>
 
 	<organization>
 		<name>m4j.ru</name>
