@@ -9,6 +9,8 @@ cd $absdir
 
 skip='-Dmaven.test.skip -DskipITs'
 
+MODULE_NAME=meteo-ya
+echo "make $MODULE_NAME"
 
 show_help(){
     echo -e "Usage: ./make build|deploy|test"
@@ -26,7 +28,7 @@ else
             mvn clean install $skip
             ;;
         "build-prod")
-              mvn clean install -$skip 
+              mvn clean install $skip 
             ;;
         "build-site")
             mvn site  $skip
