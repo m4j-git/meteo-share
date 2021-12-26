@@ -11,34 +11,40 @@ skip='-Dmaven.test.skip -DskipITs'
 
 
 show_help(){
-    echo -e "Usage: ./make build|docker|check|deploy|test"
+    echo -e "Usage: ./make build|deploy|test"
     exit
 }
 
-if [ "$1" = "build-prod" ]; then
-  mvn clean install  $skip 
+if [ ! -n "$1" ] ;then
+    show_help
+else
+    case "$1" in
+        "build-dev")
+            mvn clean install $skip
+            ;;
+        "build-stage")
+            mvn clean install $skip
+            ;;
+        "build-prod")
+              mvn clean install -$skip 
+            ;;
+        "build-site")
+            mvn site  $skip
+            ;;
+        "test-it")
+            mvn clean test 
+            ;;
+        "deploy-github")
+            mvn clean
+            mvn -f bom deploy
+            mvn -f lib  deploy
+            ;;                          
+        *)
+            echo 'Invalid command!'
+            show_help
+            ;;
+    esac
 fi
 
-if [ "$1" = "build-stage" ]; then
-  mvn clean install  $skip 
-fi
-
-if [ "$1" = "build-dev" ]; then
-  mvn clean install  $skip 
-fi
-
-if [ "$1" = "test-it" ]; then
-  mvn clean test  $skip 
-fi
-
-if [ "$1" = "build-site" ]; then
-  mvn site  $skip 
-fi
-
-if [ "$1" = "deploy-github" ]; then
-  mvn clean
-  mvn -f bom deploy
-  mvn -f lib  deploy
-fi
 
 
