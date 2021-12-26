@@ -7,24 +7,32 @@ dir=`dirname $0`
 absdir=`cd $dir; pwd`
 cd $absdir
 
+skip='-Dmaven.test.skip -DskipITs'
+
+
+show_help(){
+    echo -e "Usage: ./make build|git|check|deploy|test"
+    exit
+}
+
 if [ "$1" = "build-prod" ]; then
-  mvn clean install  -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn clean install  $skip 
 fi
 
 if [ "$1" = "build-stage" ]; then
-  mvn clean install  -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn clean install  $skip 
 fi
 
 if [ "$1" = "build-dev" ]; then
-  mvn clean install  -Dmaven.test.skip -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn clean install  $skip 
 fi
 
-if [ "$1" = "test-dev" ]; then
-  mvn clean test  -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -DargLine="-Xms1024m -Xmx8192m"
+if [ "$1" = "test-it" ]; then
+  mvn clean test  $skip 
 fi
 
 if [ "$1" = "build-site" ]; then
-  mvn site  -DskipTests -Dorg.slf4j.simpleLogger.defaultLogLevel=info -DargLine="-Xms1024m -Xmx8192m"
+  mvn site  $skip 
 fi
 
 if [ "$1" = "deploy-github" ]; then
