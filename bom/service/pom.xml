@@ -134,13 +134,13 @@
 				<configuration>
 					<changeLogFile>${change.log.path}db.changelog-master.xml</changeLogFile>
 					<driver>com.mysql.cj.jdbc.Driver</driver>
-					<url>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/meteo-ya</url>
+					<url>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${project.parent.name}</url>
 					<username>${env.METEO_USER}</username>
 					<password>${env.METEO_PASSWD}</password>
 					<outputChangeLogFile>${change.log.path}changelog-gen-${maven.build.timestamp.format}.yaml
 					</outputChangeLogFile>
 					<referenceDriver>com.mysql.cj.jdbc.Driver</referenceDriver>
-					<referenceUrl>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/meteo-ya-dev</referenceUrl>
+					<referenceUrl>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${project.parent.name}-dev</referenceUrl>
 					<referenceUsername>${env.METEO_USER}</referenceUsername>
 					<referencePassword>${env.METEO_PASSWD}</referencePassword>
 					<diffChangeLogFile>${change.log.path}changelog-diff-${maven.build.timestamp.format}.yaml
