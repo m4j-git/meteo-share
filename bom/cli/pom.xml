@@ -21,13 +21,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>ru.m4j.meteo</groupId>
-			<artifactId>meteo-ya-service</artifactId>
-			<version>${meteo.project.version}</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
