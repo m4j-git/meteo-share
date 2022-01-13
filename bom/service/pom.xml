@@ -17,7 +17,7 @@
 	</parent>
 
 	<properties>
-
+		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 	</properties>
 
 	<dependencies>
@@ -137,16 +137,16 @@
 				<configuration>
 					<changeLogFile>${change.log.path}db.changelog-master.xml</changeLogFile>
 					<driver>com.mysql.cj.jdbc.Driver</driver>
-					<url>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${project.parent.name}</url>
+					<url>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${db.shema.name}</url>
 					<username>${env.METEO_USER}</username>
 					<password>${env.METEO_PASSWD}</password>
-					<outputChangeLogFile>${change.log.path}changelog-gen-${maven.build.timestamp.format}.yaml
+					<outputChangeLogFile>${change.log.path}changelog-gen-${maven.build.timestamp}.yaml
 					</outputChangeLogFile>
 					<referenceDriver>com.mysql.cj.jdbc.Driver</referenceDriver>
-					<referenceUrl>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${project.parent.name}-dev</referenceUrl>
+					<referenceUrl>jdbc:mysql://${env.MYSQL_HOST}:${env.MYSQL_PORT}/${db.shema-ref.name}</referenceUrl>
 					<referenceUsername>${env.METEO_USER}</referenceUsername>
 					<referencePassword>${env.METEO_PASSWD}</referencePassword>
-					<diffChangeLogFile>${change.log.path}changelog-diff-${maven.build.timestamp.format}.yaml
+					<diffChangeLogFile>${change.log.path}changelog-diff-${maven.build.timestamp}.yaml
 					</diffChangeLogFile>
 					<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
 				</configuration>
